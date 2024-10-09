@@ -1,0 +1,35 @@
+---
+title: Middleware
+description: Learn about middleware in Probun.
+---
+
+Probun has a middleware system that allows you to run code before and after each route.
+
+## Creating Middleware
+
+```typescript
+import type { Next } from 'probun';
+
+const myMiddleware = async (req: Request, next: Next) => {
+  console.log('Before route');
+
+  next().then(() => {
+    console.log('After route');
+  });
+};
+```
+
+In the example above, we have created a middleware function that logs "Before route" before the route is executed and "After route" after the route is executed.
+
+## Using Middleware
+
+```typescript
+import { Probun } from 'probun';
+import { myMiddleware } from './middleware';
+
+Probun({
+  port: 3000,
+  routes: 'routes',
+  middleware: [myMiddleware],
+});
+```

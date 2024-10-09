@@ -1,0 +1,34 @@
+---
+title: Probun
+description: Fast, modern & lightweight Web Framework for Bun.
+template: splash
+hero:
+  tagline: Fast, modern & lightweight Web Framework for Bun, based on file system routing.
+  image:
+    file: ../../assets/code.png
+  actions:
+    - text: Get started
+      link: /getting-started
+      icon: right-arrow
+    - text: Join our Discord
+      link: https://discord.gg/VBNzQ4TBht
+      icon: discord
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+<CardGrid stagger>
+  <Card title='Super Fast' icon='rocket'>
+    Probun is built on top of Buns web server. It is super fast and lightweight.
+  </Card>
+  <Card title='File Based Routing' icon='document'>
+    Probun uses file-based routing. Inspired by Next.js pages router.
+  </Card>
+  <Card title='Middleware' icon='seti:json'>
+    Probun has a middleware system that allows you to add custom functionality to your app.
+  </Card>
+  <Card title='TypeScript' icon='seti:typescript'>
+    Probun is written in TypeScript and provides first-class support for TypeScript.
+  </Card>
+</CardGrid>

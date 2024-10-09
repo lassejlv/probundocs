@@ -1,0 +1,26 @@
+---
+title: Context
+description: Learn about the context object in Probun.
+---
+
+The context object is passed to each route function in Probun. It contains information about the request and response.
+Like express has req and res, Probun has a context object.
+
+## Type Definition
+
+```typescript
+type ContextType = {
+  json: (json: object, status?: number) => Promise<Response>;
+  pretty: (json: object, status?: number) => Promise<Response>;
+  text: (text: string, status?: number) => Promise<Response>;
+  html: (html: string, status?: number) => Promise<Response>;
+  error: (message: string, status?: number) => Promise<Response>;
+  success: (message: string, status?: number) => Promise<Response>;
+  redirect: (url: string, status?: number) => Promise<Response>;
+  sendFile: (filePath: string, status?: number) => Promise<Response>;
+  readHtml: (filePath: string) => Promise<string>;
+  req: Request;
+  params: Record<string, string>;
+  query: Record<string, string>;
+};
+```

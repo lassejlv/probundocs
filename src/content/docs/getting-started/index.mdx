@@ -1,0 +1,56 @@
+---
+title: Getting Started
+description: Get started with Probun
+---
+
+ProBun is a fast, lightweight file-based routing system for Bun servers. It is designed to be simple and easy to use.
+
+## Installation
+
+You must have [Bun](https://bun.sh) installed before you can use Probun.
+
+If you have Bun installed, you can install Probun using the following command:
+
+```bash
+mkdir my-probun-app && bun init -y
+```
+
+```bash
+bun install probun@latest
+```
+
+```bash
+cd my-probun-app && mkdir routes
+```
+
+## Creating a Route
+
+Here we will create a simple get route that returns a JSON response. Create a new file in the `routes` directory called `index.ts` and add the following code:
+
+```typescript
+export const GET = async (c: Context): Promise<Response> {
+
+  return c.json({ message: 'Hello, World!' });
+}
+```
+
+## Running the Server
+
+In your index.ts (not in the routes directory), add the following code:
+
+```typescript
+import { Probun } from 'probun';
+
+Probun({
+  port: 3000,
+  routes: 'routes',
+});
+```
+
+Now you can run your server using the following command:
+
+```bash
+bun --watch index.ts
+```
+
+Now you can visit `http://localhost:3000` in your browser to see your server running.

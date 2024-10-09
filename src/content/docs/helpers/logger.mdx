@@ -1,0 +1,18 @@
+---
+title: Logger
+description: Learn about the build-in logger middleware in Probun.
+---
+
+Probun has a built-in logger middleware that logs information about each request to the console.
+
+## Usage
+
+```typescript
+import { Probun, logger } from 'probun';
+
+Probun({
+  port: 3000,
+  routes: 'routes',
+  middleware: [logger],
+});
+```

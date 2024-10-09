@@ -1,0 +1,46 @@
+---
+title: File Routing
+description: Get started with Probun's file-based routing system.
+---
+
+Probuns file routing is the same style as Next.js pages router. It is designed to be simple and easy to use.
+
+### How it works
+
+Probun uses the file system as an API. Each file inside the `routes` directory is treated as a route. The file name is the route path and the name of methods are exported functions.
+
+### Example
+
+```typescript
+export const GET = async (c: Context): Promise<Response> {
+
+  return c.json({ message: 'Hello, World!' });
+}
+```
+
+In the example above, we have a file called `index.ts` inside the `routes` directory. This file contains a function called `GET` that returns a JSON response.
+
+When you visit `http://localhost:3000`, you will see the JSON response `{"message":"Hello, World!"}`.
+
+### Supported Methods
+
+- GET
+- POST
+- PUT
+- DELETE
+- PATCH
+
+### Params and query
+
+You can access params and query from the context object.
+
+```typescript
+export const GET = async (c: Context): Promise<Response> {
+
+  const { params, query } = c;
+
+  return c.json({ params, query });
+}
+```
+
+Read more about the context object [here](/context).
