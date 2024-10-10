@@ -13,6 +13,7 @@ Probun uses the file system as an API. Each file inside the `routes` directory i
 
 ```typescript
 import type { Route } from 'probun';
+
 export const GET = async (c: Route): Promise<Response> => {
   return c.json({ message: 'Hello, World!' });
 };
@@ -35,12 +36,13 @@ When you visit `http://localhost:3000`, you will see the JSON response `{"messag
 You can access params and query from the context object.
 
 ```typescript
-export const GET = async (c: Context): Promise<Response> {
+import type { Route } from 'probun';
 
+export const GET = async (c: Route): Promise<Response> => {
   const { params, query } = c;
 
   return c.json({ params, query });
-}
+};
 ```
 
-Read more about the context object [here](/context).
+Read more about the context object [here](/api/context).
