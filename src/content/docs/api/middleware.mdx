@@ -11,15 +11,9 @@ Probun has a middleware system that allows you to run code before and after each
 import type { Next } from 'probun';
 
 const myMiddleware = async (req: Request, next: Next) => {
-  console.log('Before route');
-
-  next().then(() => {
-    console.log('After route');
-  });
+  console.log('My Middleware');
 };
 ```
-
-In the example above, we have created a middleware function that logs "Before route" before the route is executed and "After route" after the route is executed.
 
 ## Using Middleware
 

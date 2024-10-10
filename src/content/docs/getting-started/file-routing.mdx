@@ -12,10 +12,10 @@ Probun uses the file system as an API. Each file inside the `routes` directory i
 ### Example
 
 ```typescript
-export const GET = async (c: Context): Promise<Response> {
-
+import type { Route } from 'probun';
+export const GET = async (c: Route): Promise<Response> => {
   return c.json({ message: 'Hello, World!' });
-}
+};
 ```
 
 In the example above, we have a file called `index.ts` inside the `routes` directory. This file contains a function called `GET` that returns a JSON response.

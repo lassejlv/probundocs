@@ -1,0 +1,19 @@
+---
+title: On Ready
+description: Learn about the onReady function in Probun.
+---
+
+`onReady` is a simple helper event, that is triggered when the server is ready to accept requests.
+
+```typescript
+import { Probun } from 'probun';
+
+Probun({
+  port: 3000,
+  routes: 'routes',
+  // type-safe btw :)
+  onReady: ({ port }) => {
+    console.log(`listening on port http://localhost:${port}`);
+  },
+});
+```

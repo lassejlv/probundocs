@@ -20,7 +20,7 @@ bun install probun@latest
 ```
 
 ```bash
-cd my-probun-app && mkdir routes
+mkdir routes
 ```
 
 ## Creating a Route
@@ -28,10 +28,11 @@ cd my-probun-app && mkdir routes
 Here we will create a simple get route that returns a JSON response. Create a new file in the `routes` directory called `index.ts` and add the following code:
 
 ```typescript
-export const GET = async (c: Context): Promise<Response> {
+import type { Route } from 'probun';
 
+export const GET = async (c: Route): Promise<Response> => {
   return c.json({ message: 'Hello, World!' });
-}
+};
 ```
 
 ## Running the Server
