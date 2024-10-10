@@ -9,7 +9,7 @@ export default defineConfig({
       title: 'Probun',
       defaultLocale: 'en',
       social: {
-        github: 'https://github.com/benjamin08/probun',
+        github: 'https://github.com/benjamint08/probun',
       },
       sidebar: [
         {
